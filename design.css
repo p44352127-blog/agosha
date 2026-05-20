@@ -6,6 +6,11 @@ body{
     background: url("images/ocean.jpg");
     margin:0;
     color:#333;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .home-bg{
@@ -63,6 +68,7 @@ header{
     justify-content: flex-end;
     gap: 10px;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .site-header .navigation a{
@@ -96,7 +102,7 @@ header{
     border-radius: 20px;
     background:rgba(255,255,255,0.2);
     color: #fff;
- font-weight: 500;
+    font-weight: 500;
     transition: 0.3s; 
 }
 
@@ -108,24 +114,23 @@ header{
 }
 
 .home-main{
-
-min-height:100px;
-padding:10px;
-background:#e0f7fa;
-position:relative;
-overflow:hidden;
+    min-height:100px;
+    padding:10px;
+    background:#e0f7fa;
+    position:relative;
+    overflow:hidden;
 }
 
 
 .bubbles span{
-position:absolute;
-bottom: -50px;
-width:50px;
-height:50px;
-background:rgb(113, 227, 252);
-border-radius:65%;
-opacity:0.7;
-animation:floatBubbles 4s linear infinite;
+    position:absolute;
+    bottom: -50px;
+    width:50px;
+    height:50px;
+    background:rgb(113, 227, 252);
+    border-radius:65%;
+    opacity:0.7;
+    animation:floatBubbles 4s linear infinite;
 }
 
 .bubbles span:nth-child(1){left:20%; animation-delay:0s;}
@@ -150,8 +155,8 @@ animation:floatBubbles 4s linear infinite;
 .bubbles span:nth-child(20){left:83%; animation-delay:3s;}
 
 @keyframes floatBubbles{
-from{transform:translateY(0);}
-to{transform:translateY(-600px);}
+    from{transform:translateY(0);}
+    to{transform:translateY(-600px);}
 }
 
 
@@ -163,7 +168,7 @@ to{transform:translateY(-600px);}
     width: 100%;
     min-height: 600px;
     position: relative;
-    padding: 40px 0;
+    padding: 40px 20px;
 }
 
 .blog-wrapper {
@@ -172,16 +177,16 @@ to{transform:translateY(-600px);}
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1500px; /* Limits the interaction area */
+    max-width: 1500px;
 }
 
 /* The 'Window' that hides other cards */
 .blog-container {
     display: flex;
-    gap: 80px; /* Space between the visible and hidden card */
+    gap: 80px;
     overflow: hidden; 
     scroll-behavior: smooth;
-    width: 400px; /* Matches one card's width + a little padding */
+    width: 400px;
     padding: 40px 0;
     transition: width 0.6s ease;
 }
@@ -193,7 +198,7 @@ to{transform:translateY(-600px);}
 
 /* Base Card Style */
 .blog-card {
-    flex: 0 0 350px; /* Fixed rectangular width */
+    flex: 0 0 350px;
     height: 450px;
     perspective: 1000px;
     transition: flex 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -329,22 +334,22 @@ to{transform:translateY(-600px);}
 
 
 #contact-button{
-position:fixed;
-bottom:30px;
-right:30px;
-width:60px;
-height:60px;
-border-radius:50%;
-background:white;
-box-shadow:0 5px 20px rgba(0,0,0,0.2);
-display:flex;
-align-items:center;
-justify-content:center;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 #contact-button img{
-width:35px;
-height:35px;
+    width:35px;
+    height:35px;
 }
 
 .book-page{
@@ -365,6 +370,7 @@ height:35px;
     overflow: hidden;
     gap: 30px;
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .book-row-reverse{
@@ -381,6 +387,7 @@ height:35px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 250px;
 }
 
 .book-text h3,.book-text p{
@@ -394,6 +401,7 @@ height:35px;
 
 .book-image {
     flex: 1;
+    min-width: 250px;
 }
 
 .book-image img{
@@ -430,122 +438,127 @@ height:35px;
 }
 
 .btn21{
-border-radius: 25px;
+    border-radius: 25px;
     background-color: #2da5f0;
 }
 .btn21:hover{
     background-color: #1b4fa1;
 }
+
 .contact-page-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px; /* Space between card and form */
-  min-height: 100vh;
-  background-color: #f0f8ff; /* Your sky background */
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 /* Card Sizing */
 .flip-card {
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    flex-shrink: 0;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 /* Front Side Style */
 .flip-card-front {
-  background: linear-gradient(135deg, #2a9d8f, #264653);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
+    background: linear-gradient(135deg, #2a9d8f, #264653);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Back Side Style */
 .flip-card-back {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
 .flip-card-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Form Container Style */
 .form-container {
-  width: 350px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 .cute-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cute-form input, .cute-form textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: inherit;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    width: 100%;
 }
 
 .cute-form button {
-  background: #2a9d8f;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
+    background: #2a9d8f;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
 }
+
 #status-message {
-  margin-top: 15px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-align: center;
-  /* Animates the message in */
-  animation: fadeIn 0.5s ease-in;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Questions Page Specific Styling */
 .questions-page {
-    background-color: #f0f8ff; /* Your signature sky blue */
+    background-color: #f0f8ff;
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: #264653;
@@ -621,12 +634,12 @@ border-radius: 25px;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px; /* High enough to contain text */
+    max-height: 300px;
 }
 
 .faq-item.active .icon {
     transform: rotate(45deg);
-    color: #e76f51; /* Changes color to indicate "Close" */
+    color: #e76f51;
 }
 
 .icon {
@@ -643,4 +656,278 @@ border-radius: 25px;
     color: #2a9d8f;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES (768px and below)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 40px 15px;
+    }
+
+    .site-header h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem);
+    }
+
+    .site-header p {
+        font-size: 0.9rem;
+    }
+
+    .navigation {
+        position: static;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .navigation a {
+        margin: 5px;
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .site-header .navigation {
+        position: static;
+        justify-content: center;
+    }
+
+    .card-section-container {
+        padding: 20px 10px;
+        min-height: 400px;
+    }
+
+    .blog-container {
+        width: 100%;
+        max-width: 350px;
+        gap: 40px;
+        padding: 20px 0;
+    }
+
+    .blog-container:has(.active) {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .blog-card {
+        flex: 0 0 280px;
+        height: 350px;
+    }
+
+    .blog-card.active {
+        flex: 0 0 100vw;
+    }
+
+    .back-image-side {
+        width: 200px;
+        min-width: 200px;
+    }
+
+    .back-content-column {
+        padding: 20px;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .nav-btn.left {
+        left: 5px;
+    }
+
+    .nav-btn.right {
+        right: 5px;
+    }
+
+    .contact-page-wrapper {
+        gap: 30px;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .flip-card {
+        width: 250px;
+        height: 320px;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .faq-container {
+        margin: 40px auto;
+    }
+
+    .faq-title {
+        font-size: 1.8rem;
+    }
+
+    .faq-question {
+        padding: 18px;
+        font-size: 0.95rem;
+    }
+
+    .book-row {
+        flex-direction: column;
+        min-height: auto;
+        gap: 15px;
+    }
+
+    .book-image {
+        min-width: 100%;
+        height: 250px;
+    }
+
+    .book-text {
+        padding: 20px;
+    }
+
+    #contact-button {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES (480px and below)
+   ============================================ */
+
+@media (max-width: 480px) {
+    .site-header {
+        padding: 30px 10px;
+    }
+
+    .site-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .site-header p {
+        font-size: 0.8rem;
+    }
+
+    .navigation a {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        margin: 3px;
+    }
+
+    .home-main {
+        padding: 5px;
+    }
+
+    .card-section-container {
+        padding: 15px 5px;
+        min-height: 300px;
+    }
+
+    .blog-container {
+        max-width: 100%;
+        padding: 15px 0;
+    }
+
+    .blog-card {
+        flex: 0 0 250px;
+        height: 300px;
+    }
+
+    .blog-card.active {
+        flex: 0 0 100vw;
+    }
+
+    .back-image-side {
+        width: 150px;
+        min-width: 150px;
+    }
+
+    .image-overlay {
+        padding: 8px;
+    }
+
+    .image-overlay h4 {
+        font-size: 0.9rem;
+    }
+
+    .image-overlay span {
+        font-size: 0.8rem;
+    }
+
+    .back-content-column {
+        padding: 15px;
+    }
+
+    .back-content-column h3 {
+        font-size: 1rem;
+    }
+
+    .back-content-column p {
+        font-size: 0.85rem;
+    }
+
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .contact-page-wrapper {
+        padding: 15px;
+    }
+
+    .flip-card {
+        width: 200px;
+        height: 260px;
+    }
+
+    .form-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .faq-container {
+        margin: 30px auto;
+    }
+
+    .faq-title {
+        font-size: 1.4rem;
+    }
+
+    .faq-question {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .answer-content {
+        padding: 0 15px 15px 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .book-row {
+        margin: 20px 0;
+    }
+
+    .book-text {
+        padding: 15px;
+    }
+
+    #contact-button {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
